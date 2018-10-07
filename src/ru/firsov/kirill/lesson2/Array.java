@@ -83,6 +83,8 @@ public class Array {
     }
 
     void deleteAll() { // clear array
+        this.size = 0;
+        arr = new int[size];
     }
 
     @Override
