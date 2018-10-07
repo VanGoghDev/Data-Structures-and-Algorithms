@@ -148,6 +148,35 @@ public class Array {
         isSorted = true;
     }
 
+    public void betterSortBubble() {
+        int tale = size - 1;
+        int k = size -1;
+        int boundsLowUnsorted = size - 1;
+        int boundsUpUnsorted = size - 1;
+
+        do {
+            //проход с конца на перед
+            for (int i=tale; i>0; i--) {
+                if (arr[i-1] > arr[i]) {
+                    swap(i-1, i);
+                    k = i;
+                }
+            }
+
+            boundsLowUnsorted = k + 1;
+
+            //проход с переда в конец
+            for (int i=1; i<=boundsUpUnsorted; i++) {
+                if (arr[i-1] > arr[i]) {
+                    swap(i-1, i);
+                    k = i;
+                }
+            }
+
+            boundsUpUnsorted = k -1;
+        } while (boundsLowUnsorted < boundsUpUnsorted);
+    }
+
     public void sortSelect() {
         for (int flag = 0; flag < size; flag++) {
             int cMin = flag;

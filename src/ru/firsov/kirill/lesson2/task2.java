@@ -12,7 +12,9 @@ public class task2 {
         System.out.println(arr);
         arr.deleteAll(1);
         System.out.println(arr);
-        arr.deleteAll();
+        //arr.deleteAll();
+        //System.out.println(arr);
+        arr.betterSortBubble();
         System.out.println(arr);
     }
 }
