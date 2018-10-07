@@ -138,6 +138,7 @@ public class Array {
         arr[b] = temp;
     }
 
+    //Сложность алгоритма: О(n^2)
     public void sortBubble() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size - 1; j++) {
@@ -148,9 +149,10 @@ public class Array {
         isSorted = true;
     }
 
+    //Сложность алгоритма: О(n^2)
     public void betterSortBubble() {
         int tale = size - 1;
-        int k = size -1;
+        int k = size -1; // будем запоминать где сортируем, чтобы лишний раз не бегать по элементам
         int boundsLowUnsorted = size - 1;
         int boundsUpUnsorted = size - 1;
 
@@ -177,6 +179,7 @@ public class Array {
         } while (boundsLowUnsorted < boundsUpUnsorted);
     }
 
+    //Сложность алгоритма: О(n^2)
     public void sortSelect() {
         for (int flag = 0; flag < size; flag++) {
             int cMin = flag;
@@ -189,6 +192,7 @@ public class Array {
         isSorted = true;
     }
 
+    //Сложность алгоритма: О(n^2)
     public void sortInsert() {
         int in;
         for (int out = 0; out < size; out++) {
