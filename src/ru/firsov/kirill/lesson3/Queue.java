@@ -6,7 +6,7 @@ package ru.firsov.kirill.lesson3;
  * @author Kirill Firsov on 08.10.2018.
  */
 public class Queue {
-
+    
     private int[] queue;
     private int head;
     private int tail;

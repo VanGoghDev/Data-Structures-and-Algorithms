@@ -37,5 +37,13 @@ public class task3 {
         Reverser reverser = new Reverser(input);
         String output = reverser.doReverse();
         System.out.println(output);
+
+        //************deque realization************************
+
+        Deque deque = new Deque(5);
+        deque.insertRight(23);
+        deque.insertLeft(53);
+        deque.removeLeft();
+        deque.insertLeft(34);
     }
 }
