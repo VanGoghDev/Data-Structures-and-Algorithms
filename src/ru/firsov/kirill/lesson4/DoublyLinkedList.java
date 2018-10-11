@@ -5,7 +5,7 @@ package ru.firsov.kirill.lesson4;
  *
  * @author Kirill Firsov on 11.10.2018.
  */
-public class DoublyLink<T> {
+public class DoublyLinkedList<T> {
 
     public class Link {
         public T data;
@@ -21,7 +21,7 @@ public class DoublyLink<T> {
     private Link first;
     private Link last;
 
-    public DoublyLink() {
+    public DoublyLinkedList() {
         first = null;
         last = null;
     }
@@ -39,13 +39,13 @@ public class DoublyLink<T> {
         first = newLink;
     }
 
-    public boolean insertAfter(int key, T data) {
+    public boolean insertAfter(int key, int newKey, T data) {
         Link current = first;
         while (current.key != key) {
             current = current.next;
             if (current == null) return false;
         }
-        Link newLink = new Link(key, data);
+        Link newLink = new Link(newKey, data);
         if (current == last) {
             newLink.next = null;
             last = newLink;
@@ -102,5 +102,15 @@ public class DoublyLink<T> {
         } else current.previous.next = current.next;
 
         return current;
+    }
+
+    public void display() {
+        System.out.println("List (first-->last): ");
+        Link current = first;
+        while(current!=null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
+        System.out.println(" ");
     }
 }
