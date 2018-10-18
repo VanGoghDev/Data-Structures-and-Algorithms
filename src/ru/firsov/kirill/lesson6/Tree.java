@@ -2,6 +2,9 @@ package ru.firsov.kirill.lesson6;
 
 import ru.firsov.kirill.lesson4.Person;
 
+import java.sql.Statement;
+import java.util.Stack;
+
 /**
  * ^ @project Data-Structures-and-Algorithms
  *
@@ -25,6 +28,10 @@ public class Tree {
     }
 
     TreeNode root;
+
+    public Tree() {
+        root = null;
+    }
 
     public void insert(Person p) {
         TreeNode node = new TreeNode(p);
@@ -63,15 +70,42 @@ public class Tree {
     }
 
     public void displayTree() {
-        inOrderTravers(root);
-    }
+        Stack globalStack = new Stack();
+        globalStack.push(root);
+        int nBlanks = 64;
+        boolean isRowEmpty = false;
+        System.out.println("...................................");
+        while(isRowEmpty == false) {
+            Stack localStack = new Stack();
+            isRowEmpty = true;
 
-    private void inOrderTravers(TreeNode node) {
-        if (node != null) {
-            inOrderTravers(node.left);
-            System.out.println(node);
-            inOrderTravers(node.right);
+            for (int i = 0; i < nBlanks; i++)
+                System.out.print(' ');
+
+            while(globalStack.isEmpty() == false) {
+                TreeNode temp = (TreeNode)globalStack.pop();
+                if(temp!=null) {
+                    System.out.println(temp.p.id);
+                    localStack.push(temp.left);
+                    localStack.push(temp.right);
+
+                    if(temp.left != null || temp.right != null)
+                        isRowEmpty = false;
+                }
+                else {
+                    System.out.print("--");
+                    localStack.push(null);
+                    localStack.push(null);
+                }
+                for (int i = 0; i < nBlanks*2-2; i++)
+                    System.out.print(' ');
+            }
+            System.out.println();
+            nBlanks /= 2;
+            while(localStack.isEmpty()==false)
+                globalStack.push(localStack.pop());
         }
+        System.out.println("...................................");
     }
 
     public boolean delete(int id) {
