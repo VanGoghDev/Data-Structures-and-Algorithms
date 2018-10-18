@@ -75,14 +75,14 @@ public class Tree {
         int nBlanks = 64;
         boolean isRowEmpty = false;
         System.out.println("...................................");
-        while(isRowEmpty == false) {
+        while(!isRowEmpty) {
             Stack localStack = new Stack();
             isRowEmpty = true;
 
             for (int i = 0; i < nBlanks; i++)
                 System.out.print(' ');
 
-            while(globalStack.isEmpty() == false) {
+            while(!globalStack.isEmpty()) {
                 TreeNode temp = (TreeNode)globalStack.pop();
                 if(temp!=null) {
                     System.out.println(temp.p.id);
@@ -102,7 +102,7 @@ public class Tree {
             }
             System.out.println();
             nBlanks /= 2;
-            while(localStack.isEmpty()==false)
+            while(!localStack.isEmpty())
                 globalStack.push(localStack.pop());
         }
         System.out.println("...................................");
