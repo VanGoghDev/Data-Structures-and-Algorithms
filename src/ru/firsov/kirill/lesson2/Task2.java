@@ -5,7 +5,7 @@ package ru.firsov.kirill.lesson2;
  *
  * @author Kirill Firsov on 07.10.2018.
  */
-public class task2 {
+public class Task2 {
     public static void main(String[] args) {
         Array arr = new Array(1, 2, 5, 1, 8, 4, 9);
         //arr.delete(0);

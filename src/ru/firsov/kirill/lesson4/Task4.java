@@ -5,7 +5,7 @@ package ru.firsov.kirill.lesson4;
  *
  * @author Kirill Firsov on 11.10.2018.
  */
-public class task4 {
+public class Task4 {
     public static void main(String[] args) {
         DoublyLinkedList<Person> personDoublyLink = new DoublyLinkedList<>();
         personDoublyLink.insertFirst(1, new Person(21, "Kirill"));
