@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Kirill Firsov on 08.10.2018.
  */
-public class task3 {
+public class Task3 {
     public static void main(String[] args) throws IOException {
         //************priority queue realization***********************
 

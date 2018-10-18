@@ -5,7 +5,7 @@ package ru.firsov.kirill.lesson1;
  *
  * @author Kirill Firsov on 07.10.2018.
  */
-public class task1 {
+public class Task1 {
     public static void main(String[] args) {
         System.out.println("binary pow: " + binaryPow(2, 3));
         int[] arr = {3, 4, 6, 2, 4, 9};
