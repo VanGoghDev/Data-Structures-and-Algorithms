@@ -9,6 +9,7 @@ import java.util.Objects;
  */
 public class Person {
 
+    public int id;
     private int age;
     private String name;
 
