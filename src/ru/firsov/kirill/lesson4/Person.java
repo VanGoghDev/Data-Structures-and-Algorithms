@@ -9,8 +9,12 @@ import java.util.Objects;
  */
 public class Person {
 
+    public int id;
     private int age;
     private String name;
+
+    public Person() {
+    }
 
     public Person(int age, String name) {
         this.age = age;
