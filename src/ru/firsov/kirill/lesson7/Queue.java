@@ -30,4 +30,7 @@ public class Queue {
         return ((rear+1==front) || (front+size-1==rear));
     }
 
+    public int peek() {
+        return queArray[front];
+    }
 }

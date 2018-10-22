@@ -35,6 +35,32 @@ public class Graph {
         }
     }
 
+    // minimal spanning tree (breadth method)
+    public void mstB() {
+        vertexList[0].wasVisited = true;
+        theQueue.insert(0);
+        int v2;
+
+        while (!theQueue.isEmpty()) {
+            int currentVertex = theQueue.peek();
+            int v1 = theQueue.remove();
+
+            while ((v2 = getAdjUnvisitedVertex(v1)) != -1) {
+                vertexList[v2].wasVisited = true;
+                theQueue.insert(v2);
+
+                displayVertex(currentVertex);
+                displayVertex(v2);
+
+                System.out.println(" ");
+            }
+        }
+
+        for (int i = 0; i < nVerts; i++) {
+            vertexList[i].wasVisited = false;
+        }
+    }
+
     // breadth search
     public void bfs() {
         vertexList[0].wasVisited = true;
@@ -49,6 +75,31 @@ public class Graph {
                 vertexList[v2].wasVisited = true;
                 displayVertex(v2);
                 theQueue.insert(v2);
+            }
+        }
+
+        for (int i = 0; i < nVerts; i++) {
+            vertexList[i].wasVisited = false;
+        }
+    }
+
+    // minimal spanning tree (depth method)
+    public void mstD() {
+        vertexList[0].wasVisited = true;
+        theStack.push(0);
+
+        while (!theStack.isEmpty()) {
+            int currentVertex = theStack.peek();
+            int v = getAdjUnvisitedVertex(currentVertex);
+            if (v == -1)
+                theStack.pop();
+            else {
+                vertexList[v].wasVisited = true;
+                theStack.push(v);
+
+                displayVertex(currentVertex);
+                displayVertex(v);
+                System.out.println(" ");
             }
         }
 
